@@ -1,0 +1,31 @@
+<html ng-app><!--Tenemos una directiva ng-app que le dice a AngularJS que tiene control para trabajar y modificar sobre todo el archivo HTML.-->
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script><!--Importamos el módulo de AngularJS a través de un tag script.-->
+    <script src="//use.edgefonts.net/vast-shadow:n4:all.js"></script>
+    <script src="//use.edgefonts.net/vast-shadow:n4:all;megrim.js"></script><!--También se importa el uso de la fuente Megrim.-->
+  </head>
+  <body>
+    <div class="todo-wrapper" ng-controller="TodoCtrl"><!--En esta división se implementa el controlador para ejecutar la función TodoCtrl.-->
+      <!--En este  texto invocamos la función getTotalTodos mediante una expresión y nos retorna el número de tareas por realizar.-->
+      <h2>You've got <span class="emphasis">{{getTotalTodos()}}</span> things to do</h2><!--Aquí dice "Tienes{{cantidad}} de cosas por hacer"-->
+      
+      <ul>
+      <!--La directiva ng-repeat mostrará las propiedades de cada uno de los elementos en el arreglo llamado "todos" mediante su índice, desplegando los objetos texto mediante una etiqueta li o lista.-->
+        <li ng-repeat="todo in todos">
+          <!--Con la directiva ng-model hacemos que la entrada que el usuario ingresa mediante el checkbox se guarde como un objeto de "todos".-->
+          <input type="checkbox" ng-model="todo.done"/>
+          <span class="done-{{todo.done}}">{{todo.text}}</span><!--Luego mostramos el texto guardado como un objeto en "todo" mediante una expresión.-->
+        </li>
+      </ul>
+      <form><!--La etiqueta form es un elemento de HTML que permite crear un tipo de entrada para el usuario.-->
+      <!--En esta entrada de tipo texto usamos un placeholder con el texto "I need to.." que significa "Necesito hacer", como una pista para que el usuario ingrese una tarea por hacer. Entonces esta entrada de tipo texto se guarda con formTodoText, de la función addTodo.-->
+        <input class="add-input" placeholder="I need to..." type="text" ng-model="formTodoText" ng-model-instant />
+        <!--El botón dispara la función addTodo() al ser presionado. Dicho botón tiene un texto "Add" que significa agregar.-->
+        <button class="add-btn" ng-click="addTodo()"><h2>Add</h2></button>
+      </form>
+      <!--Este botón es el que permite eliminar cualquier tarea seleccionada en el checkbox. El botón dispara el método clearCompleted() para borrar la tarea. El botón tiene el texto "Clear completed", que significa "limpiado completado".-->
+      <button class="clear-btn" ng-click="clearCompleted()">Clear completed</button>
+    </div>
+  </body>
+  
+</html>

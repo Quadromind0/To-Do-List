@@ -1,0 +1,100 @@
+@import "compass/css3"; 
+
+body {
+  background: #13756D;/*Aquí se especifica el color en hexadecimal del cuerpo*/
+}
+
+/*Divisón general. Aquí se establece el color del fondo de la página así como una anchura de 100% de los elementos anidados en ella*/
+.todo-wrapper {
+  background: #55B6AE;
+  width: 100%;
+}
+
+h2 {
+  font-size: 2em;/*el tamaño de los textos en h2, de acuerdo a la proporción del elemento en el que estén anidados*/
+  
+  font-family: megrim, fantasy;/*Aquí utilizamos la fuente megrim, que fue importada vía url(alojada en la web)*/
+  background: #1CA89C;/*color del fondo del texto*/
+  padding: 40px;/*el relleno del texto, con un tamaño de 40 pixeles*/
+  margin: 0; /*margen cero*/
+  color: #333;
+  text-align: center;/*El texto ha sido alineado al centro*/
+ }
+/*La clase emphasis en efecto realiza un énfasis sobre la cantidad de tareas por hacer mostradas en el html*/
+.emphasis {
+  font-family: vast-shadow, sans-serif;
+  font-size: 4em;/*Notemos que el emphasis maneja un tamaño de texto proporcional de 4em, mientras que los textos en h2 utilizan 2em.
+  Esto logra que el tamaño de la letra tenga énfasis al ser del doble del tamaño de los demás textos en la página.*/
+}
+/*Estilizado en la lista desordenada. No hay relleno ni margen*/
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+/*Cada uno de los elementos que albergue la lista se estilizan aquí*/
+li {
+  font-family: megrim, fantasy;/*Todos los elementos de la lista utilizan la fuente megrim*/
+  font-size: 2em;/*Tamaño proporcional de 2em. Tamaño estándar en los textos de la página.*/
+  padding: 40px;/*Los elementos de la página tienen un relleno de 40px*/
+  /*El listado de características de abajo se ponen para los viejos navegadores*/
+  background: #65d8cb; /* Old browsers */
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#65d8cb), to(#72f4e9));
+  background: -webkit-linear-gradient(#65d8cb 0%, #72f4e9 100%);
+  background: -moz-linear-gradient(#65d8cb 0%, #72f4e9 100%);
+  background: -o-linear-gradient(#65d8cb 0%, #72f4e9 100%);
+  background: linear-gradient(#65d8cb 0%, #72f4e9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#65d8cb', endColorstr='#72f4e9',GradientType=0 );
+  list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+/*Aquí se especifica que el tamaño del checkbox es de 40 pixeles*/
+li input[type="checkbox"] {
+  width: 40px;
+}
+/*Cuando una tarea ha sido guardada en la lista y SE HAYA SELECCIONADO EL CHECKBOX DE LA TAREA, SE ESTILIZA DE LA SIGUIENTE MANERA:*/
+.done-true {
+  text-decoration: line-through;/*El texto tiene una decoración consistente en una línea que marca el texto*/
+  color: #ddd; /*el texto cambia de color al ser seleccionado el checkbox*/
+}
+/*La entrada del texto ingresada por el usuario toma los siguientes atributos estilísticos:*/
+.add-input {
+  width: 60%; /*el texto tiene una anchura del 60% de acuerdo al tamaño de la forma o contenedor*/
+  height: 20px;/*la forma tiene una altura de 20 pixeles*/
+  float: left; /*con float aseguramos que el texto se alinea hacia la izquierda*/
+  border: none;/*la forma no tiene borde*/
+  padding: 40px 0;/*el relleno es de 40 pixeles*/
+  font-size: 2em;/*tamaño de letra proporcional a 2em*/
+  font-family: megrim, fantasy;/*De manera estándar se utiliza la fuente megrim*/
+  text-indent: 55px; 
+}
+
+/*Estilizado del botón Add o Agregar*/
+.add-btn {
+  width: 40%;/*anchura del 40%*/
+  border: none; /*no tiene borde*/
+  background: #29F4E3;/*color hexadecimal del botón*/
+  padding: 0;/*no tiene relleno*/
+  height: 100px;/*tiene una altura de 100 pixeles*/
+  /*Este h2 está contenido en el botón Agregar y estiliza el texto dentro de él*/
+  h2 {
+   background: #29F4E3;
+   padding: 0;
+   font-size: 4em;
+   font-family: megrim, fantasy;
+   color: #333;
+  }
+}
+/*Estilizado del botón clear completed*/
+.clear-btn {
+  width: 100%;/*anchura del 100%*/
+  border: none;/*no tiene borde*/
+  height: 100px;/*Tiene una altura de 100 pixeles al igual que el botón Add*/
+  background: #13756D;/*color de fondo del botón*/
+  font-size: 2em;/*tamaño de fuente estándar de 2em*/
+  font-family: megrim, fantasy;/*fuente megrim utilizada en este botón y en todos los textos*/
+  color: #aaa;/*color del texto*/
+}
+#titulo {
+    
+}
